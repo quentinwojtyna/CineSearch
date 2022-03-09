@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/materialize.js"></script>
+
+    <title>Bienvenue</title>
+</head>
+<body>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper purple">
+            <img src="img/popcorn.png" alt="LOGO" class="brand-logo" height="100%">
+        </div>
+    </nav>
+</div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card center-align blue">
+                <div class="card-content white-text">
+                    <span class="card-title">Films sortis en 2022</span>
+                    <p>Selectionnez un film pour en obtenir ses informations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align" id="listfilm"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card center-align blue">
+                <div class="card-content white-text" id="btncine"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card center-align blue">
+                <div id="histo"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/listfilm.js"></script>
+    <script src="js/state.js"></script>
+
+    <script>
+        function monClic(id) { // Fonction qui envoi l'utilisateur vers la page du film qu'il a sélectionné.
+            let btn = document.getElementById(id +'id').value; // Récupération de l'ID du film choisi.
+            localStorage.setItem("idFilm", btn); // Stockage du film choisi dans la mémoire du téléphone.
+            window.location.href = "../second.html"; // Rédirection vers la page du film.
+        }
+    </script>
+</body>
+</html>
