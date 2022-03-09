@@ -1,0 +1,22 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "CineSearch",
+  "short_name": "CineSearch",
+  "version": "com.quentin.wojtyna",
+  "description": "Sample Apache Cordova App",
+  "author": "Apache Cordova Team",
+  "icons": [
+    {
+      "src": "www/img/billet-de-cinema.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "www/img/billet-de-cinema.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    }
+  ],
+  "start_url": "index.html"
+}

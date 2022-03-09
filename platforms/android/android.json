@@ -1,0 +1,167 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "AndroidManifest.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-feature android:name=\"android.hardware.location.gps\" android:required=\"true\" />",
+              "count": 1
+            }
+          ],
+          "/manifest/application": [
+            {
+              "xml": "<provider android:authorities=\"${applicationId}.localnotifications.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"de.appplant.cordova.plugin.notification.util.AssetProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/localnotification_provider_paths\" /></provider>",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.TriggerReceiver\" />",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.ClearReceiver\" />",
+              "count": 1
+            },
+            {
+              "xml": "<service android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.ClickReceiver\" />",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:directBootAware=\"true\" android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.RestoreReceiver\"><intent-filter><action android:name=\"android.intent.action.LOCKED_BOOT_COMPLETED\" /><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>",
+              "count": 1
+            }
+          ],
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Badge\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.badge.Badge\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.quentin.wojtyna"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.quentin.wojtyna"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.quentin.wojtyna"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.quentin.wojtyna"
+    },
+    "cordova-plugin-local-notification": {
+      "ANDROID_SUPPORT_V4_VERSION": "26.+",
+      "PACKAGE_NAME": "com.quentin.wojtyna"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-geolocation.geolocation",
+      "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "navigator.geolocation"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.PositionError",
+      "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "runs": true
+    },
+    {
+      "id": "cordova-plugin-x-toast.Toast",
+      "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+      "pluginId": "cordova-plugin-x-toast",
+      "clobbers": [
+        "window.plugins.toast"
+      ]
+    },
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-badge.Badge",
+      "file": "plugins/cordova-plugin-badge/www/badge.js",
+      "pluginId": "cordova-plugin-badge",
+      "clobbers": [
+        "cordova.plugins.notification.badge"
+      ]
+    },
+    {
+      "id": "cordova-plugin-local-notification.LocalNotification",
+      "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
+      "pluginId": "cordova-plugin-local-notification",
+      "clobbers": [
+        "cordova.plugins.notification.local"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-geolocation": "4.1.0",
+    "cordova-plugin-x-toast": "2.7.3",
+    "cordova-plugin-device": "2.0.3",
+    "cordova-plugin-badge": "0.8.8",
+    "cordova-plugin-local-notification": "0.9.0-beta.3"
+  }
+}
